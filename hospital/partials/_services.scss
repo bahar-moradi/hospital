@@ -1,0 +1,47 @@
+#services {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 5rem;
+    }
+    
+    article {
+    display: flex;
+    flex: 30%;
+    gap: 1rem;
+    margin: 1rem;
+    padding: 1.5rem;
+    height: fit-content;
+    border-radius: 10px;
+    background:rgba($color:$primary-color-variant, $alpha:0.25);
+    box-shadow: 0 1rem 1rem rgba($color: $black-color, $alpha: 0.1);
+    transition: all 400ms ease;
+
+    &:hover {
+        margin-top: -0.5rem;
+
+    }
+    i{
+        font-size: 1.7rem;
+    }
+    div{
+        h4 {
+            margin-bottom: 1rem;
+        }
+    }
+
+}
+}
+
+@media screen and (max-width:600px){
+
+    #services {
+        .container {
+            article {
+                display: flex;
+                flex:90%;
+                height: 150px;
+        }
+     }
+    }
+}

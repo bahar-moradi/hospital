@@ -1,0 +1,135 @@
+#specialists {
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 5rem;
+        
+    
+    article{
+            flex: 20%;
+            gap: 1rem;  
+            overflow: hidden;
+            border-radius: 10px;
+            background:rgba($color:$primary-color-variant, $alpha:0.25);
+            box-shadow: 0 1rem 1rem rgba($color: $black-color, $alpha: 0.1);
+            transition: all 400ms ease;
+            position: relative;
+            background-color: $white-color;
+            transition: all 700ms ease;
+            &:hover {
+                box-shadow: none;
+                .specialist__image::before {
+                    border-radius: 0.5rem;
+                    left: 0;
+                }
+                .specialist__whatsapp {
+                    opacity: 1;
+                }
+                .specialist__socials {
+                    opacity: 1;
+                }
+            }
+    }
+    
+    .specialist__socials {
+        display: flex;
+        flex-direction: column;
+        /* align-items: flex-end; */
+        position: absolute;
+        top: 5%;
+        right: 10%;
+        gap: 0.5rem;
+        opacity: 0;
+        transition: all 1s 400ms ease;
+
+        & i{
+            color:rgba($color: $black-color, $alpha: 1);
+        }
+
+        a {
+            color:$primary-color;
+            font-size: 0.8rem;
+            border-radius: 50%;
+            background-color: $white-color;
+            padding: 0.4rem;
+            transition: all 400ms ease;
+
+            &:hover {
+                background: $primary-color;
+                color: $white-color;
+            }
+        }
+
+     }
+    
+        
+
+    
+    .specialist__image {
+        height: 20rem;
+        position: relative;
+        border-radius: hidden;
+        overflow: hidden;
+    &::before {
+        content:"";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        background: linear-gradient(135deg,rgba($primary-color,0.8),rgba($primary-color-variant,0.8));
+        border-radius:40%;
+        transition: all  1s 400ms ease;
+        box-sizing: border-box;
+
+
+    }    
+    }
+  
+
+}
+.specialisist__details {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+.specialist__whatsapp {
+    background: $succcess-color;
+    position: absolute;
+    color: $white-color;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30%;
+    border-radius: 50%;
+    padding: 1rem;
+    opacity: 0;
+    transition: all 1s 300ms ease;
+}
+}
+
+@media screen and (max-width:1024px){
+
+    #specialists {
+        .container {
+            article {
+                
+                flex:45%;
+
+        }
+     }
+    }
+}
+@media screen and (max-width:600px){
+
+    #specialists {
+        .container {
+            article {
+                
+                flex:90%;
+
+        }
+     }
+    }
+}

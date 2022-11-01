@@ -1,0 +1,71 @@
+#footer {
+    background: linear-gradient(135deg, #eeaeca, #94bbe9);;
+    .container {
+
+        .foot {
+            display: flex;
+            flex-wrap: wrap;
+            padding-bottom: 5rem;
+            gap: 1rem;
+            article{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                flex: 23%;
+                gap: 2rem;
+                padding-top: 50px;
+                div.share a{
+                    margin-right: 20px;
+                }
+                & a:hover {
+                    
+                    color: $text-color;
+                    font-weight: bold;
+
+                }
+                & div,a,p{
+                    color: $white-color;
+                }               
+                
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:1024px){
+
+    #footer {
+        .container {
+                .foot {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 5rem;
+                    article {
+                        display: flex;
+                        flex-wrap: wrap;
+                        flex: 40%;
+                    }
+                
+                }
+               
+
+        }
+    }
+    
+}
+
+@media screen and (max-width:600px){
+
+    #footer {
+        .container {
+            .foot{
+                article {
+                
+                flex:90%;
+                }
+
+             }
+         }
+    }
+}

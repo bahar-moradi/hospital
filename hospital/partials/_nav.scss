@@ -1,0 +1,227 @@
+nav {
+    width: 100vw;
+    height: 5rem;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include gradientBackground;
+    box-shadow: 0 1rem 1rem rgba($color: $black-color, $alpha: 0.1);
+
+}
+
+nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      
+
+}
+nav div#nav_items {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 2rem;
+    perspective: 300ms;
+    
+}
+nav div#nav_items a {
+    font-weight: 500;
+    font-size: 1rem;
+    color:$white-color;
+    margin: auto;
+    opacity: 0;
+    animation: flipNavItem 300ms ease forwards;
+    transform-origin: top;
+    @keyframes flipNavItem {
+        0% {
+            transform: rotateX(90deg);
+
+        }
+        100% {
+            transform: rotateX(0deg);
+            opacity: 1;
+
+        }
+        
+    }
+    &:nth-child(2){
+        animation-delay: 200ms;
+    }
+    &:nth-child(3){
+        animation-delay: 400ms;
+    }
+    &:nth-child(4){
+        animation-delay: 600ms;
+    }
+    &:nth-child(5){
+        animation-delay: 800ms
+    }
+}
+div#nav_items.active{
+    display: block;
+}
+
+nav .icons i#login-btn.changecolor {
+    background-color: aqua !important;
+}
+nav .icons {
+    display: flex;
+    gap: 1rem;
+    color: $white-color;
+    
+}
+nav .icons #menu-btn {
+    display: none;
+}
+nav .icons i {
+color: $white-color;
+}
+nav .nav__logo  {
+    color: $white-color;
+    display: flex;
+    gap: .5rem;
+    font-weight: bolder;
+}
+
+nav .login-form {
+    
+    width: 300px;
+    overflow-x: hidden;
+    position: absolute;
+    top:120% ;right:-110%;
+    text-align: center;
+    font-size:1rem;
+    transition: .3s linear;
+    padding-bottom: 3rem;
+    font-size: 12px;
+    background: $primary-color-variant;
+    padding-top: 10px;
+}
+nav .login-form.active {
+    right: 2rem;
+    transition: .3s linear;
+}
+
+nav .login-form .form-group input.form-control {
+    display: block;
+    width: 85%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px auto;
+
+}
+
+nav .coment-form{
+    position: fixed;
+    top:-110%;;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: var(--box-shadow);
+    z-index: 1004;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,.8);
+    transition:all ease-in-out 1s ;
+}
+nav .coment-form .form-group {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+nav .coment-form.active {
+    top: 0;
+    transition:all ease-in-out 1s ;
+}
+
+nav .coment-form label {
+    color:$secondary-color;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+nav .coment-form textarea {
+    font-size: 30px;
+    margin-top: 8px;
+    
+    
+}
+nav .coment-form a.btn {
+    margin-left: auto;   
+
+}
+nav .coment-form textarea::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+nav .coment-form .form-group{
+    width: 500px;
+}
+nav .coment-form .form-group #close {
+    position: absolute;
+    color:$secondary-color;
+    cursor: pointer;
+    top: 2rem;
+    right: 3rem;
+    font-size: 2rem;
+
+}
+
+
+@media screen and (max-width: 1024px) {
+    nav {
+        .container{
+            button {
+                display: inline-block;
+                background: transparent;
+                color: $white-color;
+                font-size: 2rem;
+                cursor: pointer;
+
+
+                
+            }
+        }
+        .icons #menu-btn {
+            display: block;
+        }
+        div#nav_items
+        {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            top: 100%;
+            right: 2rem;
+            width: 15rem;
+           
+            border-radius: 0;
+        }
+        div#nav_items a {
+            width: 100%;
+            line-height: 3rem;
+            display: flex;
+            align-items: flex-start;
+            padding:1.5rem 2rem ;
+            background:linear-gradient(332deg, $primary-color,$primary-color-variant);
+            box-shadow: 0 1rem 1.6rem rgba($black-color, 0.15);
+        
+        }
+        div#nav_items a.btn {
+            display: block;
+            border-radius: 0;
+            background: $secondary-color;
+        }
+
+    }
+
+    
+}
